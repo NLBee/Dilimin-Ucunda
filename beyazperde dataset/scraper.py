@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 URL = "https://www.beyazperde.com/filmler-tum/kullanici-puani/"
-NUM_OF_PAGES = 1
+NUM_OF_PAGES = 228
 
 def page_link_generator():
     page_urls = [URL]

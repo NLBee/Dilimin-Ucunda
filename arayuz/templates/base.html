@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <title>Dilimin Ucunda</title>
+
+
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+        <!-- Custom css for this template -->
+        <link href="{{ url_for('static', filename='css/search.css') }}" rel="stylesheet">
+        <link rel="icon" href="{{ url_for('static', filename='assets/NLBeelogo2.jpeg')}}">
+    {% block head %} {% endblock %}
+    </head>
+    <body class="text-center">
+        <header>
+            <div class="collapse" id="navbarHeader">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-md-7 py-4">
+                            <h4 class="text-dark">Hakkında</h4>
+                            <p class="text-dark">İnsan hafızası artan içerik yoğunluğu karşısında giderek zorlanmaktadır. Hepimiz, tükettiğimiz film, kitap ve oyunları bir başkasına önerecekken, o içeriğe dair çoğu kilit noktayı hatırladığımız fakat ismini bir türlü bulamadığımız sayısız an yaşamaktayız. O anları tarif eden "Dilimin ucunda!" cümlesi bu hissi en iyi betimleyen ifadedir. "Dilimin Ucunda!" bu anlarla başa çıkabilmek için internetten elde edilen verilerden ve yapay zekadan yardım alarak, bir türlü aklımıza gelmeyen isimleri bulmamıza yardımcı olacak bir doğal dil işleme projesidir. </p>
+                        </div>
+                        <div class="col-sm-4 offset-md-1 py-4">
+                            <h4 class="text-dark">Contact</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="{{url_for('index')}}" class="text-dark">Dilimin Ucunda</a></li>
+                                <li><a href="{{url_for('nlbee')}}" class="text-dark">NLBee</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar shadow-sm">
+                <div class="container">
+                    <a href="{{url_for('index')}}" class="navbar-brand d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-camera-reels-fill" viewBox="0 0 16 16"><path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/><path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/></svg>
+                        <strong>Dilimin Ucunda</strong>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="form-floating w-100 m-auto">
+            {% block body %} {% endblock %}
+            {% block results %} {% endblock %}
+            <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
+        </main>
+
+
+        <script src="../static/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

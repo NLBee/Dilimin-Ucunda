@@ -3,16 +3,16 @@ import requests
 import pandas as pd
 
 # boş dataframe oluşturma
-movies_df = pd.DataFrame(columns=["başlık", "özet", "tür", "vizyon_tarihi", "oyuncular", "yönetmen", "resim_link"])
+movies_df = pd.DataFrame(columns=["başlık", "orijinal_isim", "özet", "tür", "vizyon_tarihi", "oyuncular", "yönetmen", "resim_link"])
 
 movie_links = list()
 
-last_page_num = 228
+last_page_num = 1368
 
 # sitede sayfa sayfa gezerek her filmin linkini çekme
 for page_num in range(1, last_page_num+1):
 
-    req = requests.get(f"https://www.beyazperde.com/filmler-tum/kullanici-puani/?page={page_num}")
+    req = requests.get(f"https://www.beyazperde.com/filmler-tum/?page={page_num}")
 
     soup = BeautifulSoup(req.text, "html.parser")
 
@@ -36,6 +36,14 @@ for each in movie_links:
         print(title)
     except AttributeError:
         title = "None"
+
+    # orijinal isim
+
+    try:
+        org_title_span = soup.find("span", text="Orijinal adı ")
+        org_title = org_title_span.next_sibling.strip()
+    except AttributeError:
+        org_title = title
 
     # özet
     try:
@@ -84,8 +92,8 @@ for each in movie_links:
         img_url = "None"
 
     # film bilgilerini içeren dataframe satırı oluşturma
-    movies_df = movies_df.append({"başlık": title, "özet": description, "tür": genre, "vizyon_tarihi": date, "oyuncular": cast, "yönetmen": director, "resim_link": img_url}, ignore_index=True)
+    movies_df = movies_df.append({"başlık": title, "orijinal_isim": org_title, "özet": description, "tür": genre, "vizyon_tarihi": date, "oyuncular": cast, "yönetmen": director, "resim_link": img_url}, ignore_index=True)
 
 
 # verileri csv dosyasına kaydetme
-movies_df.to_csv("movies2.csv", encoding="utf-8")
+movies_df.to_csv("beyazperde.csv", encoding="utf-8")

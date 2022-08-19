@@ -16,3 +16,6 @@ Arayüzümüz Python'ın Flask modülü kullanılarak hazırlandı. Kullanım ba
 
 ![unknown](https://user-images.githubusercontent.com/74731622/185700183-b2100e4b-1c81-4370-b700-7b2b3f51433a.png)
 
+![1](https://user-images.githubusercontent.com/74731622/185700398-7a233488-ed0e-4873-bfa7-588e4987d692.png)
+
+

@@ -12,3 +12,4 @@ Geleneksel arama yöntemlerinde tüm karakterlerin eşleşmesi gerekir. Fakat an
 
 ### Arayüz
 Arayüzümüz Python'ın Flask modülü kullanılarak hazırlandı. Kullanım basitliği ile, her yaş ve gruptan kullanıcı hedeflendi. Gelecek hedefimiz, arayüzümüzü webe deploy etmek ve modelimizi tüm kullanıcılara açmak.
+![bee](https://user-images.githubusercontent.com/74731622/185699814-650aee46-3c38-4c26-b9a4-b54dc754aacc.png)
